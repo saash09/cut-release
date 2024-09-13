@@ -26,7 +26,7 @@ jobs:
         run: echo "value from the user" ${{ github.event.inputs.varribe1 }}
   control-job:
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.check }}
+    if: ${{ github.event.inputs.check == true }}
     steps:
       - name: Run a one-line script
-        run: echo "value from the user ${{ github.event.inputs.varribe1 }}"
+        run: echo "value from the user ${{ github.event.inputs.check }}"
