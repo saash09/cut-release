@@ -1,3 +1,5 @@
+
+
 name: CI
 on:
   push:
@@ -12,12 +14,11 @@ on:
         required: true
         default: 'hello'
       check:
-        description: 'this variable is for input'
+        description: 't'
         type: boolean
         required: true
-        default: false
- 
- 
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,7 +27,9 @@ jobs:
         run: echo "value from the user" ${{ github.event.inputs.varribe1 }}
   control-job:
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.check == false }}
+    if: ${{inputs.check == true }}
     steps:
       - name: Run a one-line script
-        run: echo "value from the user ${{ github.event.inputs.varribe1 }}"
+        run: echo "value from the user "
+
+      
